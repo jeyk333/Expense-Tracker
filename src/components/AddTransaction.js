@@ -5,7 +5,7 @@ import { Button, Input } from "antd";
 
 function AddTransaction() {
   const [text, setText] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(null);
   const { addTransaction } = useContext(GlobalContext);
 
   const onSubmit = e => {
@@ -23,19 +23,14 @@ function AddTransaction() {
       <h3>Add new transaction</h3>
       <form onSubmit={onSubmit}>
         <div className="form-control">
-          <label htmlFor="text">Text</label>
           <Input
             type="text"
             value={text}
             onChange={e => setText(e.target.value)}
-            placeholder="Enter text..."
+            placeholder="Enter title..."
           />
         </div>
         <div className="form-control">
-          <label htmlFor="amount">
-            Amount <br />
-            (negative - expense, positive - income)
-          </label>
           <Input
             prefix="₹"
             suffix="INR"

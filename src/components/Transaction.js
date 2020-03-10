@@ -1,22 +1,19 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
+import { Tag } from "antd";
+
 function Transaction({ transaction }) {
   const { deleteTransaction } = useContext(GlobalContext);
-  const sign = transaction.amount < 0 ? "-" : "+";
   return (
-    <li className={transaction.amount < 0 ? "minus" : "plus"}>
-      {transaction.text}{" "}
-      <span>
-        {sign}${Math.abs(transaction.amount)}
-      </span>
-      <button
-        className="delete-btn"
-        onClick={() => deleteTransaction(transaction.id)}
-      >
-        x
-      </button>
-    </li>
+    <Tag
+      closable
+      className="expenseTags"
+      color={transaction.amount < 0 ? "error" : "success"}
+      onClose={() => deleteTransaction(transaction.id)}
+    >
+      {transaction.text} <span>₹{Math.abs(transaction.amount)}</span>
+    </Tag>
   );
 }
 

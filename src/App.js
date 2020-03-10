@@ -13,17 +13,19 @@ import { Row, Col } from "antd";
 function App() {
   return (
     <GlobalProvider>
-      <Header />
-      <Row>
-        <Col span={12}>
-          <Balance />
-          <IncomeExpenses />
-        </Col>
-        <Col span={12}>
-          <TransactionList />
-          <AddTransaction />
-        </Col>
-      </Row>
+      <div className="container">
+        <Header />
+        <Row gutter={16}>
+          <Col className="gutter-row" span={12}>
+            <Balance />
+            <IncomeExpenses />
+          </Col>
+          <Col className="gutter-row" span={12}>
+            <TransactionList />
+            <AddTransaction />
+          </Col>
+        </Row>
+      </div>
     </GlobalProvider>
   );
 }

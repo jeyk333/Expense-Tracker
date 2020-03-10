@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import { Card } from "antd";
 
 function Balance() {
   const { transactions } = useContext(GlobalContext);
@@ -9,8 +10,12 @@ function Balance() {
 
   return (
     <>
-      <h4>Your Balance</h4>
-      <h1>${total}</h1>
+      <div className="site-card-wrapper">
+        <Card>
+          <h1>My Balance</h1>
+          <p>${total}</p>
+        </Card>
+      </div>
     </>
   );
 }
