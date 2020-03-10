@@ -22,8 +22,14 @@ function App() {
           </Col>
           <Col className="gutter-row" span={12}>
             <TransactionList />
+          </Col>
+        </Row>
+        <Row gutter={16}>
+          <Col className="gutter-row" span={8}></Col>
+          <Col className="gutter-row" span={8}>
             <AddTransaction />
           </Col>
+          <Col className="gutter-row" span={8}></Col>
         </Row>
       </div>
     </GlobalProvider>

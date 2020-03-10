@@ -19,13 +19,15 @@ function IncomeExpenses() {
     .toFixed(2);
   return (
     <Card>
-      <div>
-        <h4>Income</h4>
-        <p>{income}</p>
-      </div>
-      <div>
-        <h4>Expense</h4>
-        <p>{expense}</p>
+      <div className="incExp">
+        <div>
+          <h4>Income</h4>
+          <h3>{income}</h3>
+        </div>
+        <div>
+          <h4>Expense</h4>
+          <h3>{expense}</h3>
+        </div>
       </div>
     </Card>
   );

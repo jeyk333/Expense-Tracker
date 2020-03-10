@@ -10,7 +10,7 @@ function AddTransaction() {
 
   const onSubmit = e => {
     e.preventDefault();
-
+    console.log("cool");
     const transaction = {
       id: Math.random(),
       text: text,
@@ -18,30 +18,36 @@ function AddTransaction() {
     };
     addTransaction(transaction);
   };
+
   return (
     <div>
-      <h3>Add new transaction</h3>
-      <form onSubmit={onSubmit}>
-        <div className="form-control">
-          <Input
-            type="text"
-            value={text}
-            onChange={e => setText(e.target.value)}
-            placeholder="Enter title..."
-          />
-        </div>
-        <div className="form-control">
-          <Input
-            prefix="₹"
-            suffix="INR"
-            type="number"
-            value={amount}
-            onChange={e => setAmount(e.target.value)}
-            placeholder="Enter amount..."
-          />
-        </div>
-        <Button type="primary">Add transaction</Button>
-      </form>
+      <h3 className="newTransaction">Add New Expense </h3>
+      <div className="form-control">
+        <Input
+          type="text"
+          value={text}
+          onChange={e => setText(e.target.value)}
+          placeholder="Enter title..."
+        />
+      </div>
+      <div className="form-control">
+        <Input
+          prefix="₹"
+          suffix="INR"
+          type="number"
+          value={amount}
+          onChange={e => setAmount(e.target.value)}
+          placeholder="Enter amount..."
+        />
+      </div>
+      <Button
+        onClick={onSubmit}
+        type="primary"
+        className="button"
+        disabled={!(text !== "" && amount !== null)}
+      >
+        Add
+      </Button>
     </div>
   );
 }

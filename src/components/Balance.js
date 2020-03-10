@@ -10,10 +10,10 @@ function Balance() {
 
   return (
     <>
-      <div className="site-card-wrapper">
+      <div style={{ textAlign: "center" }}>
         <Card>
-          <h1>My Balance</h1>
-          <p>${total}</p>
+          <h2>My Balance</h2>
+          <h1>₹{total}</h1>
         </Card>
       </div>
     </>
